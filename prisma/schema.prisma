@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  id       Int    @id @default(autoincrement())
+  name     String
+  password String
+  email    String
+
+  Tasks Tasks[]
+}
+
+// vishal -> tasks
+model Tasks {
+  id        Int     @id @default(autoincrement())
+  taskName  String
+  completed Boolean @default(false)
+
+  usersId Int
+  user    Users @relation(fields: [usersId], references: [id])
+}

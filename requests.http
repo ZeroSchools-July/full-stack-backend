@@ -1,0 +1,53 @@
+
+GET http://localhost:5000/task
+###
+POST http://localhost:5000/task
+Content-Type: application/json
+
+{
+    "task": "Task3 for user 2",
+    "userId": 2
+}
+
+### 
+PUT http://localhost:5000/task/1
+Content-Type: application/json
+
+{
+    "task" : "Task4",
+    "completed" : true
+}
+
+### 
+DELETE http://localhost:5000/task/1726234264631
+
+###
+
+GET http://localhost:5000/user
+###
+POST http://localhost:5000/user
+Content-Type: application/json
+
+{
+    "name": "vishal1",
+   
+    "email" : "vishaln@ieee.org",
+    "password": "Welcome@123"
+}
+
+### 
+PUT http://localhost:5000/user/1
+Content-Type: application/json
+
+{
+    "name": "Vishal",
+    "email" : "vishal.n@ieee.org",
+    "password": "Welcome@123"
+}
+
+### 
+DELETE http://localhost:5000/user/1
+
+###
+
+GET http://localhost:5000/user/1/tasks
